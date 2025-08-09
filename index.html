@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird | Professional Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <header class="py-6 bg-gray-800 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-center font-pixel">
+                <span class="text-yellow-400">Flappy</span> 
+                <span class="text-green-400">Bird</span>
+            </h1>
+            <p class="text-center mt-2 text-gray-300">Professional Edition</p>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center p-4">
+        <div class="game-container relative max-w-md w-full">
+            <canvas id="canvas" width="288" height="512" class="block mx-auto border-4 border-gray-700 rounded-lg shadow-xl"></canvas>
+            
+            <div class="game-controls mt-6 flex justify-center space-x-4">
+                <button id="start-btn" class="px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-bold transition">
+                    Start Game
+                </button>
+                <button id="restart-btn" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold transition">
+                    Restart
+                </button>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <div id="score-display" class="text-2xl font-bold">
+                    Score: <span id="score">0</span>
+                </div>
+                <div id="high-score-display" class="text-lg text-gray-300">
+                    High Score: <span id="high-score">0</span>
+                </div>
+            </div>
+            
+            <div id="game-over" class="hidden absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center rounded-lg">
+                <h2 class="text-3xl font-bold text-red-500 mb-4">Game Over!</h2>
+                <p class="text-xl mb-6">Your Score: <span id="final-score" class="text-yellow-400">0</span></p>
+                <button id="try-again-btn" class="px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-bold transition">
+                    Try Again
+                </button>
+            </div>
+        </div>
+        
+        <div class="instructions mt-8 max-w-md bg-gray-800 p-4 rounded-lg">
+            <h3 class="text-xl font-bold mb-2">How to Play:</h3>
+            <ul class="list-disc pl-5 space-y-1">
+                <li>Press <kbd class="bg-gray-700 px-2 py-1 rounded">Space</kbd> or <kbd class="bg-gray-700 px-2 py-1 rounded">Up Arrow</kbd> to make the bird fly</li>
+                <li>Avoid hitting the pipes or the ground</li>
+                <li>Each passed pipe gives you 1 point</li>
+                <li>On mobile, tap anywhere to make the bird fly</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="py-4 bg-gray-800 text-center text-gray-400 text-sm">
+        <p>© 2023 Flappy Bird Professional | Created with HTML5 Canvas</p>
+    </footer>
+
+    <script src="flappyBird.js"></script>
+</body>
+</html>
